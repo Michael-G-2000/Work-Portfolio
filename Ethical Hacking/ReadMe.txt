@@ -1,1 +1,3 @@
 == Project Description ==
+
+This was the final assignment for the Ethical Hacking Principles unit.  Using a Kali Linux, Metasploitable  and Windows XP virtual machine I was given tasks centred around identifying and exploiting vulnerabilities on a target computer.  For this assignment I used OpenVAS to scan for vulnerabilites, metasploitable to exploit the vulnerabilites abd nmap for file transfer.  The last part of the assignment was to complete activites on the picoCTF website.  picoCTF is a cybersecurity challenge where you use various cybersecuirty exploits in order to find a hidden phrase.
