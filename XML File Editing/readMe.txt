@@ -1,10 +1,5 @@
-=== Student details ===
-Name: Michael Giglio
-Student ID: 19399805
-Tutorial: Thursday 11:00 - 1:00
+== Project Description ==
 
-=== Submission Notes ===
-Changed Minni Mouse Number from 0688763344 to 0288763344 with Heidi's permission.
+This project was the second part of an assignment for the Designing Web Applications using XML unit.  For this project we had to create a car rental management website that used XML to store the data of the carss available for rental, customer details and past and current rental bookings.
 
-=== Incomplete Features/Work ===
-All work completed.
+This website had to allow a user to add, edit and delete 
