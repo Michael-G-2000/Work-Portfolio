@@ -5,7 +5,5 @@ This project was the second part of an assignment for the Designing Web Applicat
 This website had to allow a user to add and edit rental bookings and customers as well as implement proper user login/logout functionalities.
 
 HTML and CSS was used to display and format the content of the webpages.
-
 PHP was used as the server side language.
-
 XML was used to store the information needed by the website.
