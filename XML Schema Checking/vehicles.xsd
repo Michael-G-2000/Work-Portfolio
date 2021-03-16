@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This document contains the schema for vehicles.xml
+
+ Filename: vehicles.xsd
+ Author: Michael Giglio
+ Student ID: 19399805
+ Date: 03/09/2020
+-->
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+  <!-- User defined types -->
+  <xs:simpleType name='regoType'>
+    <xs:restriction base='xs:string'>
+      <xs:pattern value='[A-Z]{3}[0-9]{3}'/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Simple elements -->
+  <xs:element name='make' type='xs:string'/>
+  <xs:element name='model' type='xs:string'/>
+  <xs:element name='notes' type='xs:string'/>
+  <xs:element name='odometre' type='xs:nonNegativeInteger'/>
+
+  <xs:element name='year'>
+    <xs:simpleType>
+      <xs:restriction base='xs:integer'>
+        <xs:pattern value='(19|20)[0-9]{2}'/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name='transmission'>
+    <xs:simpleType>
+      <xs:restriction base='xs:string'>
+        <xs:enumeration value='Auto'/>
+        <xs:enumeration value='Manual'/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- Attributes -->
+  <xs:attribute name='rego' type='regoType'/>
+
+  <!-- Complex elements -->
+  <xs:element name='description'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='transmission'/>
+        <xs:element ref='notes'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='vehicle'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='make'/>
+        <xs:element ref='model'/>
+        <xs:element ref='year'/>
+        <xs:element ref='description'/>
+        <xs:element ref='odometre'/>
+      </xs:sequence>
+      <xs:attribute ref='rego' use='required'/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='vehicles'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='vehicle' minOccurs='0' maxOccurs='unbounded'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

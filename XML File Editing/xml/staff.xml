@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This document contains data for staff login credentials
+
+ Filename: staff.xml
+ Author: Michael Giglio
+ Student ID: 19399805
+ Date: 15/10/2020
+-->
+<credentials>
+  <credential>
+    <name>Mary</name>
+    <password>123</password>
+  </credential>
+  <credential>
+    <name>Jack</name>
+    <password>abcd123</password>
+  </credential>
+  <credential>
+    <name>Bob</name>
+    <password>Password</password>
+  </credential>
+  <credential>
+    <name>Jane</name>
+    <password>windows</password>
+  </credential>
+</credentials>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This document contains data for rental vehicles of Rent-a-Car
+
+ Filename: vehicles.xml
+ Author: Michael Giglio
+ Student ID: 19399805
+ Date: 03/09/2020
+-->
+<vehicles
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="vehicles.xsd">
+  <vehicle rego='ABC123'>
+    <make>Toyota</make>
+    <model>Tarago Gli</model>
+    <year>2018</year>
+    <description>
+      <transmission>Auto</transmission>
+      <notes>8 seat people mover</notes>
+    </description>
+    <odometre>37216</odometre>
+  </vehicle>
+  <vehicle rego='XYZ987'>
+    <make>Toyota</make>
+    <model>Corolla Ascent</model>
+    <year>2014</year>
+    <description>
+      <transmission>Manual</transmission>
+      <notes>Hatch back</notes>
+    </description>
+    <odometre>97500</odometre>
+  </vehicle>
+  <vehicle rego='BBB333'>
+    <make>Holden</make>
+    <model>Commodore</model>
+    <year>2019</year>
+    <description>
+      <transmission>Auto</transmission>
+      <notes>Hatch</notes>
+    </description>
+    <odometre>11593</odometre>
+  </vehicle>
+  <vehicle rego='DWR654'>
+    <make>Ford</make>
+    <model>Escape</model>
+    <year>2017</year>
+    <description>
+      <transmission>Auto</transmission>
+      <notes>SUV</notes>
+    </description>
+    <odometre>56000</odometre>
+  </vehicle>
+</vehicles>

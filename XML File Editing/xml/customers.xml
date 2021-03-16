@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This document contains data for customers of Rent-a-Car
+
+ Filename: customers.xml
+ Author: Michael Giglio
+ Student ID: 19399805
+ Date: 03/09/2020
+-->
+<customers>
+  <customer custNum='BL343456'>
+    <name>
+      <firstName>Bart</firstName>
+      <lastName>Simpson</lastName>
+    </name>
+    <address>
+      <street>45 Olive dr.</street>
+      <suburb>Sydney</suburb>
+      <state>NSW</state>
+      <postcode>2000</postcode>
+    </address>
+    <licence>1234AB</licence>
+    <email>Bart@gmail.com</email>
+    <phoneNumbers>
+      <number>0298576433</number>
+      <number>0413335678</number>
+      <number>0296784455</number>
+    </phoneNumbers>
+    <nominatedDrivers>
+      <driver>
+        <name>
+          <firstName>Marge</firstName>
+          <lastName>Simpson</lastName>
+        </name>
+        <address>
+          <street>45 Olive dr.</street>
+          <suburb>Sydney</suburb>
+          <state>NSW</state>
+          <postcode>2000</postcode>
+        </address>
+        <licence>6789IJ</licence>
+        <number>0453876590</number>
+      </driver>
+      <driver>
+        <name>
+          <firstName>Homer</firstName>
+          <lastName>Simpson</lastName>
+        </name>
+        <address>
+          <street>45 Olive dr.</street>
+          <suburb>Sydney</suburb>
+          <state>NSW</state>
+          <postcode>2000</postcode>
+        </address>
+        <licence>7890KL</licence>
+        <number>0453876577</number>
+      </driver>
+    </nominatedDrivers>
+  </customer>
+  <customer custNum='TR567903'>
+    <name>
+      <firstName>Donald</firstName>
+      <lastName>Duck</lastName>
+    </name>
+    <address>
+      <street>12 Grey place</street>
+      <suburb>Sometown</suburb>
+      <state>NSW</state>
+      <postcode>9876</postcode>
+    </address>
+    <licence>3456CD</licence>
+    <email>Donald233@hotmail.com</email>
+    <phoneNumbers>
+      <number>0432226677</number>
+    </phoneNumbers>
+  </customer>
+  <customer custNum='VL305888'>
+    <name>
+      <title>Ms</title>
+      <firstName>Minni</firstName>
+      <lastName>Mouse</lastName>
+    </name>
+    <address>
+      <street>368 King st</street>
+      <suburb>Bankstown</suburb>
+      <state>NSW</state>
+      <postcode>2200</postcode>
+    </address>
+    <licence>4567EF</licence>
+    <email>Minni.Mouse@yahoo.com</email>
+    <phoneNumbers>
+      <number>0445566543</number>
+      <number>0288763344</number> <!-- Changed from 0688763344 with permission from Heidi-->
+    </phoneNumbers>
+    <nominatedDrivers>
+      <driver>
+        <name>
+          <firstName>Bugs</firstName>
+          <lastName>Bunny</lastName>
+        </name>
+        <address>
+          <street>36 Northon street</street>
+          <suburb>Cooma</suburb>
+          <state>NSW</state>
+          <postcode>2630</postcode>
+        </address>
+        <licence>4444AB</licence>
+        <number>0483339999</number>
+      </driver>
+    </nominatedDrivers>
+  </customer>
+  <customer custNum='AG123456'>
+    <name>
+      <title>Mr</title>
+      <firstName>Michael</firstName>
+      <middleName>Theodore</middleName>
+      <lastName>Mouse</lastName>
+    </name>
+    <address>
+      <street>56 Rock road</street>
+      <suburb>Marrickville</suburb>
+      <state>NSW</state>
+      <postcode>2204</postcode>
+    </address>
+    <licence>5678GH</licence>
+    <email>M.Mouse.1928@gmail.com</email>
+    <phoneNumbers>
+      <number>0411234444</number>
+    </phoneNumbers>
+  </customer>
+</customers>

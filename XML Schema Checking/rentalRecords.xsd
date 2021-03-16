@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This document contains the schema for rentalRecord.xml
+
+ Filename: rentalRecords.xsd
+ Author: Michael Giglio
+ Student ID: 19399805
+ Date: 10/09/2020
+-->
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+  <!-- User defined types -->
+  <xs:simpleType name='custNumType'>
+    <xs:restriction base='xs:string'>
+      <xs:pattern value='[A-Z]{2}[0-9]{6}'/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name='regoType'>
+    <xs:restriction base='xs:string'>
+      <xs:pattern value='[A-Z]{3}[0-9]{3}'/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Simple elements -->
+  <xs:element name='customerNum' type='custNumType'/>
+  <xs:element name='regoNum' type='regoType'/>
+  <xs:element name='booked' type='xs:date'/>
+  <xs:element name='pickUp' type='xs:date'/>
+  <xs:element name='daysRented' type='xs:integer'/>
+  <xs:element name='dailyCost' type='xs:decimal'/>
+  <xs:element name='charge' type='xs:decimal'/>
+
+  <!-- Attributes -->
+  <xs:attribute name='recordNum' type='xs:integer'/>
+  <xs:attribute name='full' type='xs:boolean'/>
+
+  <!-- Complex elements -->
+  <xs:element name='date'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='booked'/>
+        <xs:element ref='pickUp'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='fuel'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='charge' minOccurs='0' maxOccurs='1'/>
+      </xs:sequence>
+      <xs:attribute name='full' type='xs:boolean'/>
+
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='booking'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='customerNum'/>
+        <xs:element ref='regoNum'/>
+        <xs:element ref='date'/>
+        <xs:element ref='daysRented'/>
+        <xs:element ref='dailyCost'/>
+        <xs:element ref='fuel' minOccurs='0' maxOccurs='1'/>
+      </xs:sequence>
+      <xs:attribute ref='recordNum' use='required'/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='rentals'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='booking' minOccurs='0' maxOccurs='unbounded'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

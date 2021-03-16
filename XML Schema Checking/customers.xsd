@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This document contains the schema for customers.xml
+
+ Filename: customers.xsd
+ Author: Michael Giglio
+ Student ID: 19399805
+ Date: 10/09/2020
+-->
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+  <!-- User defined types -->
+  <xs:simpleType name='custNumType'>
+    <xs:restriction base='xs:string'>
+      <xs:pattern value='[A-Z]{2}[0-9]{6}'/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Simple elements -->
+  <xs:element name='title' type='xs:string'/>
+  <xs:element name='firstName' type='xs:string'/>
+  <xs:element name='middleName' type='xs:string'/>
+  <xs:element name='lastName' type='xs:string'/>
+  <xs:element name='street' type='xs:string'/>
+  <xs:element name='suburb' type='xs:string'/>
+  <xs:element name='email' type='xs:string'/>
+
+  <xs:element name='state'>
+    <xs:simpleType>
+      <xs:restriction base='xs:string'>
+        <xs:enumeration value='NSW'/>
+        <xs:enumeration value='QLD'/>
+        <xs:enumeration value='ACT'/>
+        <xs:enumeration value='VIC'/>
+        <xs:enumeration value='TAS'/>
+        <xs:enumeration value='SA'/>
+        <xs:enumeration value='WA'/>
+        <xs:enumeration value='NT'/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name='postcode'>
+    <xs:simpleType>
+      <xs:restriction base='xs:integer'>
+        <xs:pattern value='[0-9]{4}'/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name='licence'>
+    <xs:simpleType>
+      <xs:restriction base='xs:string'>
+        <xs:pattern value='[0-9]{4}[A-Z]{2}'/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name='number'>
+    <xs:simpleType>
+      <xs:restriction base='xs:integer'>
+        <!-- This regex allows for numbers to start with 
+      	any of the valid area codes used in Australia -->
+        <xs:pattern value='(02|03|04|07|08)[0-9]{8}'/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- Attributes -->
+  <xs:attribute name='custNum' type='custNumType'/>
+
+  <!-- Complex elements -->
+  <xs:element name='name'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='title' minOccurs='0' maxOccurs='1'/>
+        <xs:element ref='firstName'/>
+        <xs:element ref='middleName' minOccurs='0' maxOccurs='1'/>
+        <xs:element ref='lastName'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='address'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='street'/>
+        <xs:element ref='suburb'/>
+        <xs:element ref='state'/>
+        <xs:element ref='postcode'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='phoneNumbers'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='number' minOccurs='1' maxOccurs='3'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Person's info and driver template -->
+  <xs:complexType name='personInfo'>
+    <xs:sequence>
+      <xs:element ref='name'/>
+      <xs:element ref='address'/>
+      <xs:element ref='licence'/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name='driverInfo'>
+    <xs:complexContent>
+      <xs:extension base='personInfo'>
+        <xs:sequence>
+          <xs:element ref='number'/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Complex elements cont. -->
+  <xs:element name='driver' type='driverInfo'/>
+
+  <xs:element name='nominatedDrivers'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='driver' minOccurs='0' maxOccurs='unbounded'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Customer template -->
+  <xs:complexType name='custInfo'>
+    <xs:complexContent>
+      <xs:extension base='personInfo'>
+        <xs:sequence>
+          <xs:element ref='email'/>
+          <xs:element ref='phoneNumbers'/>
+          <xs:element ref='nominatedDrivers' minOccurs='0' maxOccurs='unbounded'/>
+        </xs:sequence>
+        <xs:attribute ref='custNum' use='required'/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Complex elements cont. -->
+  <xs:element name='customer' type='custInfo'/>
+
+  <xs:element name='customers'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='customer' minOccurs='0' maxOccurs='unbounded'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

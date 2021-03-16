@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This document contains data for rental bookings of Rent-a-Car
+
+ Filename: rentalRecords.xml
+ Author: Michael Giglio
+ Student ID: 19399805
+ Date: 03/09/2020
+-->
+<rentals>
+  <booking recordNum='4698'>
+    <customerNum>BL343456</customerNum>
+    <regoNum>DWR654</regoNum>
+    <date>
+      <booked>2019-10-10</booked>
+      <pickUp>2020-12-09</pickUp>
+    </date>
+    <daysRented>6</daysRented>
+    <dailyCost>85.00</dailyCost>
+    <fuel full='false'>
+      <charge>45.00</charge>
+    </fuel>
+  </booking>
+  <booking recordNum='4732'>
+    <customerNum>TR567903</customerNum>
+    <regoNum>ABC123</regoNum>
+    <date>
+      <booked>2019-11-24</booked>
+      <pickUp>2020-01-01</pickUp>
+    </date>
+    <daysRented>4</daysRented>
+    <dailyCost>80.00</dailyCost>
+    <fuel full='true'>
+    </fuel>
+  </booking>
+  <booking recordNum='4825'>
+    <customerNum>VL305888</customerNum>
+    <regoNum>XYZ987</regoNum>
+    <date>
+      <booked>2020-05-10</booked>
+      <pickUp>2020-05-15</pickUp>
+    </date>
+    <daysRented>8</daysRented>
+    <dailyCost>49.00</dailyCost>
+    <fuel full='true'>
+    </fuel>
+  </booking>
+  <booking recordNum='4920'>
+    <customerNum>AG123456</customerNum>
+    <regoNum>XYZ987</regoNum>
+    <date>
+      <booked>2020-08-31</booked>
+      <pickUp>2020-09-21</pickUp>
+    </date>
+    <daysRented>30</daysRented>
+    <dailyCost>37.00</dailyCost>
+  </booking>
+  <booking recordNum='4673'>
+    <customerNum>BL343456</customerNum>
+    <regoNum>BBB333</regoNum>
+    <date>
+      <booked>2020-08-31</booked>
+      <pickUp>2020-12-12</pickUp>
+    </date>
+    <daysRented>10</daysRented>
+    <dailyCost>60.00</dailyCost>
+  </booking>
+</rentals>
